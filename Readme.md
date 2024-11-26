@@ -1,4 +1,21 @@
-# Gestión de gimnasios grupo 1
+# 🚀 Gestión de Gimnasios
+
+Este proyecto es un **CRUD de gestión de gimnasios** desarrollado como parte del módulo de **Acceso a Datos**, con el objetivo de aprender a trabajar con **Node.js** y **Express**. En colaboración con mi compañero **Daniel Stephen**, hemos creado este sistema que permite gestionar clientes, entrenadores, planes de membresía y sesiones.
+
+---
+
+## 🔧 Tecnologías Utilizadas
+
+- **Node.js**
+- **Express.js**
+- **MySQL**
+- **Pug (Motor de plantillas)**
+- **Docker**
+- **Bcrypt** (para encriptación de contraseñas)
+- **Bootstrap** (para la interfaz de usuario)
+
+---
+## 📂 Estructura del Proyecto
 
 ## Inicio del proyecto
 
