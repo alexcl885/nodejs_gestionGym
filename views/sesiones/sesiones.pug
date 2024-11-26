@@ -1,0 +1,30 @@
+extends ../templates/layout
+
+block content
+
+        div 
+            h3 listado de sesiones
+            table(border=1)
+                thead 
+                    tr
+                        th id
+                        th entrenador 
+                        th cliente
+                        th fecha hora de inicio 
+                        th duracion minutos
+                        th borrar 
+                        th editar
+                tbody
+                    each sesion in sesiones
+                        tr 
+                            td=sesion.id
+                            td=sesion.nombre_entrenador                     
+                            td=sesion.nombre_cliente
+                            td=sesion.fecha_hora_inicio
+                            td=sesion.duracion_minutos
+                            td 
+                                a(href=`/sesiones/del/${sesion.id}`) borrar 
+                            td 
+                                a(href=`/sesiones/edit/${sesion.id}`) editar 
+            p 
+                a(href="/sesiones/add") Añadir una nueva sesion

@@ -1,0 +1,31 @@
+extends ../templates/layout
+
+block content
+
+        div 
+            h3 listado de entrenadores
+            table(border=1)
+                thead 
+                    tr
+                        th id
+                        th nombre 
+                        th especialidad
+                        th nivel experiencia 
+                        th borrar 
+                        th editar
+                        th sesiones
+                tbody 
+                    each entrenador in entrenadores
+                        tr 
+                            td=entrenador.id
+                            td=entrenador.nombre                        
+                            td=entrenador.especialidad
+                            td=entrenador.nivel_experiencia
+                            td 
+                                a(href=`/entrenadores/del/${entrenador.id}`) borrar 
+                            td 
+                                a(href=`/entrenadores/edit/${entrenador.id}`) editar 
+                            td 
+                                a(href=`/entrenadores/entrenadores_sesiones/${entrenador.id}`) sesiones 
+            p 
+                a(href="/entrenadores/add") Añadir un nuevo entrenador

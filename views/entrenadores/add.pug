@@ -1,0 +1,15 @@
+extends ../templates/layout
+block content 
+    h3 Añadir un nuevo entrenador
+    div 
+        form(action="/entrenadores/add", method="post") 
+            label(for="nombre") Nombre:
+            input(type="text", name="nombre") 
+            br
+            label(for="especialidad") Especialidad: 
+            input(type="text", name="especialidad")
+            br
+            label(for="nivel_experiencia") Nivel experiencia: 
+            input(type="text", name="nivel_experiencia")
+            br
+            button(type="submit") Agregar entrenador 

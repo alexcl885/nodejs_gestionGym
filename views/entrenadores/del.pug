@@ -1,0 +1,14 @@
+extends ../templates/layout
+
+block content 
+    h3 Borrar un entrenador
+        div 
+            form(method="post") 
+                label(for="nombre") Nombre:
+                input(type="text", name="nombre", value=`${entrenador.nombre}`,disabled)
+                br
+                label(for="especialidad") Especialidad:
+                input(type="text", name="especialidad", value=`${entrenador.especialidad}`,disabled)
+                br
+                input(type="hidden", name="id", value=`${entrenador.id}`)
+                input(type="submit", value="Enviar")

@@ -1,0 +1,23 @@
+extends ../templates/layout
+
+block content 
+    h3 Editar una sesion
+        div 
+            form(method="post") 
+                label(for="nombre_entrenador") Entrenador (nombre + id):
+                select(name="entrenador")
+                    option(value=`${sesion.id_entrenador}`) #{sesion.nombre_entrenador}
+                    each entrenador in entrenadores
+                        option(value=`${entrenador.id}`) #{entrenador.nombre + ' ' + entrenador.id}
+                br
+                label(for="nombre_cliente") Cliente (nombre + id):
+                select(name="cliente")
+                    option(value=`${sesion.id_cliente}`) #{sesion.nombre_cliente}
+                    each cliente in clientes
+                        option(value=`${cliente.id}`) #{cliente.nombre + ' ' + cliente.id}
+                br
+                label(for="duracion_minutos") Duración en minutos: 
+                input(type="text", name="duracion_minutos" value=`${sesion.duracion_minutos}`)
+                br
+                input(type="hidden", name="id", value=`${sesion.id}`)
+                input(type="submit", value="Enviar")

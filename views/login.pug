@@ -1,0 +1,20 @@
+
+
+block content
+    .container 
+        h1 INICIA SESION 
+        form(action="/auth/login", method="post") 
+            
+            label.form-label(for="username") Usuario
+            input.form-control(type="text", name="username", id="username")
+            br
+            
+            label.form-label(for="password") Contraseña
+            input.form-control(type="password", name="password" id="password")
+            br
+            
+            
+            button.btn.btn-primary(type="submit") Sign in!
+            
+        p ¿Sin usuario? Regístrese 
+            a(href="/auth/register") aquí.

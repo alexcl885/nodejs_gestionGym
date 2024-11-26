@@ -1,0 +1,14 @@
+extends ../templates/layout
+
+block content 
+    h3 Borrar un plan
+        div 
+            form(method="post") 
+                label(for="nombre_plan") Nombre:
+                input(type="text", name="nombre_plan", value=`${plan.nombre_plan}`,disabled)
+                br
+                label(for="duracion_meses") Duracion en meses:
+                input(type="text", name="duracion_meses", value=`${plan.duracion_meses}`,disabled)
+                br
+                input(type="hidden", name="id", value=`${plan.id}`)
+                input(type="submit", value="Enviar")

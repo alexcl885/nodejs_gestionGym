@@ -1,0 +1,13 @@
+extends ../templates/layout
+block content 
+    h3 Borrar sesion
+    div 
+        form(method="post") 
+            label(for="entrenador") Entrenador (nombre + id):
+            input(type="text", name="entrenador" value=`${sesion.nombre_entrenador}`, disabled)
+            br
+            label(for="cliente") Cliente (nombre + id):
+            input(type="text", name="entrenador" value=`${sesion.nombre_cliente}`, disabled)
+            br
+            input(type="hidden", name="id", value=`${sesion.id}`)
+            input(type="submit", value="Enviar")

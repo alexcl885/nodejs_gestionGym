@@ -1,0 +1,15 @@
+extends ../templates/layout
+block content 
+    h3 Añadir un nuevo plan
+    div 
+        form(action="/planes/add", method="post") 
+            label(for="nombre_plan") Nombre:
+            input(type="text", name="nombre_plan") 
+            br
+            label(for="duracion_meses") Duración en meses: 
+            input(type="text", name="duracion_meses")
+            br
+            label(for="costo") Costo: 
+            input(type="text", name="costo")
+            br
+            button(type="submit") Agregar plan 

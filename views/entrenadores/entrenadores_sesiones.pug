@@ -1,0 +1,32 @@
+extends ../templates/layout
+
+block content
+    div
+        h3 Listado de sesiones del entrenador:
+            each entrenador in entrenadores
+                if entrenador.id == idEntrenador
+                    span #{entrenador.nombre}
+    div
+        form(id="sesionForm")  
+            p Seleccione otro entrenador:
+            select(name="entrenador" id="entrenador") 
+                each entrenador in entrenadores
+                    if entrenador.id == idEntrenador
+                        option(value=entrenador.id selected) #{entrenador.nombre}
+                    else
+                        option(value=entrenador.id) #{entrenador.nombre}
+    div
+        table(border=1)
+            thead
+                tr
+                    th cliente
+                    th fecha hora de inicio
+                    th duracion en minutos
+            tbody
+                each sesion in sesiones
+                    tr
+                        td= sesion.cliente
+                        td= sesion.fecha_hora_inicio
+                        td= sesion.duracion_minutos
+
+    script(src="/js/entrenadores_sesiones.js", type="text/javascript")

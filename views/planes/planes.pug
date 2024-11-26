@@ -1,0 +1,31 @@
+extends ../templates/layout
+
+block content
+
+        div 
+            h3 listado de planes
+            table(border=1)
+                thead 
+                    tr
+                        th id
+                        th nombre 
+                        th duracion en meses
+                        th costo 
+                        th borrar 
+                        th editar
+                        th clientes
+                tbody 
+                    each plan in planes
+                        tr 
+                            td=plan.id
+                            td=plan.nombre_plan                        
+                            td=plan.duracion_meses
+                            td=plan.costo
+                            td 
+                                a(href=`/planes/del/${plan.id}`) borrar 
+                            td 
+                                a(href=`/planes/edit/${plan.id}`) editar 
+                            td 
+                                a(href=`/planes/planes_clientes/${plan.id}`) lista_clientes
+            p 
+                a(href="/planes/add") Añadir un nuevo plan

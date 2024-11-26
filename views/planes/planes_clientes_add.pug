@@ -1,0 +1,13 @@
+extends ../templates/layout
+block content 
+    h3 Añadir un cliente al plan 
+        span #{plan.nombre_plan}  
+    div 
+        form(method="post") 
+            label(for="nombre_cliente") Cliente (nombre + id):
+            select(name="cliente")
+                each cliente in clientes
+                    option(value=`${cliente.id}`) #{cliente.nombre + ' ' + cliente.id}
+            br
+            input(type="hidden", name="idPlan", value=`${plan.id}`)
+            button(type="submit") Agregar plan 

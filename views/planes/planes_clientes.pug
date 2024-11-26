@@ -1,0 +1,36 @@
+extends ../templates/layout
+
+block content
+    div
+        h3 Listado de clientes de los planes:
+            each plan in planes
+                if plan.id == idPlan
+                    span #{plan.nombre_plan}
+    div
+        form(id="planForm")  
+            p Seleccione otro plan para ver sus matrículas:
+            select(name="plan" id="plan") 
+                each plan in planes
+                    if plan.id == idPlan
+                        option(value=plan.id selected) #{plan.nombre_plan}
+                    else
+                        option(value=plan.id) #{plan.nombre_plan}
+    div
+        table(border=1)
+            thead
+                tr
+                    th ID
+                    th Nombre
+                    th Correo
+                    th Fecha de Registro
+            tbody
+                each cliente in clientes
+                    tr
+                        td= cliente.id
+                        td= cliente.nombre
+                        td= cliente.correo
+                        td= cliente.fecha_registro
+        p 
+            a(href=`/planes/planes_clientes_add/${idPlan}`) Añadir un cliente a este plan
+    
+    script(src="/js/lista_clientes.js", type="text/javascript")

@@ -1,0 +1,17 @@
+extends ../templates/layout
+
+block content 
+    h3 Editar un plan
+        div 
+            form(method="post") 
+                label(for="nombre_plan") Nombre:
+                input(type="text", name="nombre_plan", value=`${plan.nombre_plan}`)
+                br
+                label(for="duracion_meses") Duracion en meses:
+                input(type="text", name="duracion_meses", value=`${plan.duracion_meses}`)
+                br
+                label(for="costo") Costo:
+                input(type="text", name="costo", value=`${plan.costo}`)
+                br
+                input(type="hidden", name="id", value=`${plan.id}`)
+                input(type="submit", value="Enviar")

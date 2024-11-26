@@ -1,0 +1,11 @@
+extends ../templates/layout
+
+block content 
+    h3 Borrar un cliente
+        div 
+            form(method="post") 
+                label(for="nombre") Nombre:
+                input(type="text", name="nombre", value=`${cliente.nombre}`,disabled)
+                br
+                input(type="hidden", name="id", value=`${cliente.id}`)
+                input(type="submit", value="Enviar")

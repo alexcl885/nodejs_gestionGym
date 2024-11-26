@@ -1,0 +1,15 @@
+extends ../templates/layout
+block content 
+    h3 Añadir un nuevo cliente
+    div 
+        form(action="/clientes/add", method="post") 
+            label(for="nombre") Nombre:
+            input(type="text", name="nombre") 
+            br
+            label(for="correo") Correo: 
+            input(type="text", name="correo")
+            br
+            label(for="telefono") Telefono: 
+            input(type="text", name="telefono")
+            br
+            button(type="submit") Agregar cliente 

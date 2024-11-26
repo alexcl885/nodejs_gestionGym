@@ -1,0 +1,17 @@
+extends ../templates/layout
+
+block content 
+    h3 Editar un cliente
+        div 
+            form(method="post") 
+                label(for="nombre") Nombre:
+                input(type="text", name="nombre", value=`${cliente.nombre}`)
+                br
+                label(for="correo") Correo:
+                input(type="text", name="correo", value=`${cliente.correo}`)
+                br
+                label(for="telefono") Telefono:
+                input(type="text", name="telefono", value=`${cliente.telefono}`)
+                br
+                input(type="hidden", name="id", value=`${cliente.id}`)
+                input(type="submit", value="Enviar")

@@ -1,0 +1,19 @@
+extends ../templates/layout
+block content 
+    h3 Añadir una nueva sesion
+    div 
+        form(action="/sesiones/add", method="post") 
+            label(for="nombre_entrenador") Entrenador (nombre + id):
+            select(name="entrenador")
+                each entrenador in entrenadores
+                    option(value=`${entrenador.id}`) #{entrenador.nombre + ' ' + entrenador.id}
+            br
+            label(for="nombre_cliente") Cliente (nombre + id):
+            select(name="cliente")
+                each cliente in clientes
+                    option(value=`${cliente.id}`) #{cliente.nombre + ' ' + cliente.id}
+            br
+            label(for="duracion_minutos") Duración en minutos: 
+            input(type="text", name="duracion_minutos")
+            br
+            button(type="submit") Agregar plan 
